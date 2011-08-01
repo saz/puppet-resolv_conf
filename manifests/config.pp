@@ -7,7 +7,7 @@ class resolv_conf::config {
         mode    => 644,
         content => template('resolv_conf/resolv.conf.erb'),
         require => $use_dnsmasq ? {
-            true    => Class['dnsmasq'],
+            true    => Dnsmasq::Conf['local-dns'],
             default => undef,
         }
     }
