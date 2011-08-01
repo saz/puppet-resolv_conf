@@ -1,0 +1,7 @@
+domain <%= scope.lookupvar('resolv_conf::domain') %>
+<% if !scope.lookupvar('resolv_conf::searchpath').empty? %>search <%= scope.lookupvar('resolv_conf::searchpath').join(" ") %>
+<% end -%>
+<% if scope.lookupvar('resolv_conf::use_dnsmasq') == true %>nameserver 127.0.0.1
+<% end -%>
+<% scope.lookupvar('resolv_conf::nameservers').each do |ns| %>nameserver <%= ns %>
+<% end -%>
