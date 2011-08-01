@@ -6,5 +6,9 @@ class resolv_conf::config {
         group   => root,
         mode    => 644,
         content => template('resolv_conf/resolv.conf.erb'),
+        require => $use_dnsmasq ? {
+            true    => Class['dnsmasq'],
+            default => undef,
+        }
     }
 }
