@@ -2,5 +2,4 @@
 
 listen-address=127.0.0.1
 domain-needed
-strict-order
 cache-size=15000
