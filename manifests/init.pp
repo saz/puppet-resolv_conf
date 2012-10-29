@@ -2,6 +2,7 @@ class resolv_conf(
   $searchpath,
   $nameservers,
   $domainname = $domain,
+  $options = undef,
   $use_dnsmasq = false
 ) {
   include resolv_conf::params
