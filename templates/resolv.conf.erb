@@ -7,3 +7,5 @@ domain <%= scope.lookupvar('resolv_conf::domainname') %>
 <% end -%>
 <% scope.lookupvar('resolv_conf::nameservers').each do |ns| %>nameserver <%= ns %>
 <% end -%>
+<% if !scope.lookupvar('resolv_conf::options').empty? %>options <%= scope.lookupvar('resolv_conf::options').join(" ") %>
+<% end -%>
