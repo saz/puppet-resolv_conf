@@ -1,6 +1,6 @@
 class resolv_conf::params {
   case $::osfamily {
-    'Debian': {
+    'Debian', 'RedHat': {
       $config_file = '/etc/resolv.conf'
     }
     default: {
