@@ -1,11 +1,19 @@
 # File managed by puppet
 
-domain <%= scope.lookupvar('resolv_conf::domainname') %>
-<% if !scope.lookupvar('resolv_conf::searchpath').empty? %>search <%= scope.lookupvar('resolv_conf::searchpath').join(" ") %>
+domain <%= domainname %>
+<% if !searchpath.empty? -%>
+    <% if searchpath.kind_of? Array -%>
+        search <%= searchpath.join(" ") %>
+    <% else -%>
+        search <%= searchpath %>
+    <% end -%>
 <% end -%>
-<% if scope.lookupvar('resolv_conf::use_dnsmasq') == true %>nameserver 127.0.0.1
+<% if use_dnsmasq == true -%>
+nameserver 127.0.0.1
 <% end -%>
-<% scope.lookupvar('resolv_conf::nameservers').each do |ns| %>nameserver <%= ns %>
+<% nameservers.each do |ns| -%>
+nameserver <%= ns %>
 <% end -%>
-<% if !scope.lookupvar('resolv_conf::options').empty? %>options <%= scope.lookupvar('resolv_conf::options').join(" ") %>
+<% if @options && !options.empty? -%>
+options <%= options.join(" ") %>
 <% end -%>
