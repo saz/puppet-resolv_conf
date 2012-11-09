@@ -4,7 +4,14 @@ class resolv_conf::params {
       $config_file = '/etc/resolv.conf'
     }
     default: {
-      fail("Unsupported platform: ${::osfamily}")
+      case $::operatingsystem {
+        gentoo: {
+          $config_file = '/etc/resolv.conf'
+        } 
+        default: {
+          fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
+        }
+      }
     }
   }
 }
