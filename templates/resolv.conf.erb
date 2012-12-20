@@ -2,11 +2,11 @@
 
 domain <%= domainname %>
 <% if !searchpath.empty? -%>
-    <% if searchpath.kind_of? Array -%>
-        search <%= searchpath.join(" ") %>
-    <% else -%>
-        search <%= searchpath %>
-    <% end -%>
+<% if searchpath.kind_of? Array -%>
+search <%= searchpath.join(" ") %>
+<% else -%>
+search <%= searchpath %>
+<% end -%>
 <% end -%>
 <% if use_dnsmasq == true -%>
 nameserver 127.0.0.1
