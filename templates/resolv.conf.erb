@@ -3,7 +3,7 @@
 domain <%= @domainname %>
 <% if !@searchpath.empty? -%>
 <% if @searchpath.kind_of? Array -%>
-search <%= searchpath.join(" ") %>
+search <%= @searchpath.join(" ") %>
 <% else -%>
 search <%= @searchpath %>
 <% end -%>
