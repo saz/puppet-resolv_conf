@@ -22,7 +22,7 @@ class resolv_conf(
     ensure  => file,
     path    => $resolv_conf::params::config_file,
     owner   => 'root',
-    group   => 'root',
+    group   => $resolv_conf::params::group,
     mode    => '0644',
     content => template('resolv_conf/resolv.conf.erb'),
     require => $require_real,
