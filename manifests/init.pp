@@ -6,18 +6,6 @@ class resolv_conf(
   $use_dnsmasq = false
 ) inherits resolv_conf::params {
 
-  if $use_dnsmasq {
-    dnsmasq::conf { 'local-dns':
-      ensure => present,
-      source => 'puppet:///modules/resolv_conf/dnsmasq_local-dns',
-    }
-  }
-
-  $require_real = $use_dnsmasq ? {
-    true    => Dnsmasq::Conf['local-dns'],
-    default => undef,
-  }
-
   file { 'resolv.conf':
     ensure  => file,
     path    => $resolv_conf::params::config_file,
@@ -25,6 +13,5 @@ class resolv_conf(
     group   => $resolv_conf::params::group,
     mode    => '0644',
     content => template('resolv_conf/resolv.conf.erb'),
-    require => $require_real,
   }
 }
