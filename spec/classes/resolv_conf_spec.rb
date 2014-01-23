@@ -26,13 +26,6 @@ describe 'resolv_conf' do
       :domainname  => 'example.com',
       :options     => ['timeout:2', 'attempts:3'],
     },
-    {
-      :searchpath  => 'example.com',
-      :nameservers => ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
-      :domainname  => 'example.com',
-      :options     => ['timeout:2', 'attempts:3'],
-      :use_dnsmasq => true,
-    },
   ].each do |param_set|
     describe "when #{param_set == {} ? "using default" : "specifying"} class parameters" do
 
@@ -77,10 +70,6 @@ describe 'resolv_conf' do
             expected_lines = [
               "domain #{param_hash[:domainname]}",
             ]
-
-            if(param_hash[:use_dnsmasq])
-                expected_lines.push("nameserver 127.0.0.1")
-            end
 
             if(!param_hash[:searchpath].empty?)
               if(param_hash[:searchpath].kind_of?(Array))

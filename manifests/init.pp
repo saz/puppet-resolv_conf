@@ -2,8 +2,7 @@ class resolv_conf(
   $searchpath,
   $nameservers,
   $domainname = $::domain,
-  $options = undef,
-  $use_dnsmasq = false
+  $options = undef
 ) inherits resolv_conf::params {
 
   file { 'resolv.conf':

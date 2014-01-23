@@ -8,9 +8,6 @@ search <%= @searchpath.join(" ") %>
 search <%= @searchpath %>
 <% end -%>
 <% end -%>
-<% if @use_dnsmasq == true -%>
-nameserver 127.0.0.1
-<% end -%>
 <% @nameservers.each do |ns| -%>
 nameserver <%= ns %>
 <% end -%>
