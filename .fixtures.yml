@@ -1,6 +1,4 @@
 fixtures:
   symlinks:
     "resolv_conf": "#{source_dir}"
-  repositories:
-    stdlib: "git://github.com/puppetlabs/puppetlabs-stdlib.git"
 
