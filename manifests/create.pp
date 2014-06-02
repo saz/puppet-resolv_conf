@@ -11,12 +11,6 @@ define resolv_conf::create (
 
   include resolv_conf
 
-  # if $config_file {
-  #   $resolv_conf_file = $config_file
-  #   } else {
-  #   $resolv_conf_file = $resolv_conf::params::config_file
-  # }
-
   file { "resolv.conf.$name":
     ensure  => file,
     path    => $config_file,
