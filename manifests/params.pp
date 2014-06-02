@@ -8,6 +8,10 @@ class resolv_conf::params {
       $config_file = '/etc/resolv.conf'
       $group       = 'wheel'
     }
+    'OpenBSD': {
+      $config_file = '/etc/resolv.conf'
+      $group       = 'wheel'
+    }
     'Archlinux': {
       $config_file = '/etc/resolv.conf'
       $group       = 'root'
