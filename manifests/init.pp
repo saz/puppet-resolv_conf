@@ -1,5 +1,5 @@
 class resolv_conf {
-  class { '::resolv_conf::params' }
+  class { '::resolv_conf::params': }
 }
 
 
