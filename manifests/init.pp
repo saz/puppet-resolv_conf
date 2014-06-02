@@ -1,4 +1,4 @@
-include resolv_conf::params
+require resolv_conf::params
 
 define resolv_conf (
   $searchpath,
@@ -19,7 +19,7 @@ define resolv_conf (
 
   file { "resolv.conf.$name":
     ensure  => file,
-    path    => $resolv_conf_file,
+    path    => $config_file
     owner   => $owner,
     group   => $group,
     mode    => $mode,
