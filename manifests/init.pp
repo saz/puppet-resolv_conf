@@ -7,9 +7,7 @@ define resolv_conf (
   $owner = 'root',
   $group = $::resolv_conf::params::group,
   $mode  = '0644'
-) {
-
-  include resolv_conf
+) inherits resolv_conf::params {
 
   # if $config_file {
   #   $resolv_conf_file = $config_file
