@@ -1,4 +1,4 @@
-class resolv_conf::params {}
+include resolv_conf::params
 
 define resolv_conf (
   $searchpath,
@@ -26,3 +26,7 @@ define resolv_conf (
     content => template('resolv_conf/resolv.conf.erb'),
   }
 }
+
+resolv_conf::params -> resolv_conf
+
+
