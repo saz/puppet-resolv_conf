@@ -1,3 +1,5 @@
+include resolv_conf::params
+
 define resolv_conf (
   $searchpath,
   $nameservers,
@@ -9,8 +11,6 @@ define resolv_conf (
   $mode  = '0644'
 ) {
 
-  include resolv_conf::params
-  
   # if $config_file {
   #   $resolv_conf_file = $config_file
   #   } else {
