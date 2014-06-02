@@ -1,4 +1,4 @@
-class resolv_conf::params 
+class resolv_conf::params {}
 
 define resolv_conf (
   $searchpath,
