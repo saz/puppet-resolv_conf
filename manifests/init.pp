@@ -3,23 +3,26 @@ define resolv_conf (
   $nameservers,
   $domainname = $::domain,
   $options = undef,
-  $config_file = undef
+  $config_file = $resolv_conf::params::config_file,
+  $owner = 'root',
+  $group = $resolv_conf::params::group,
+  $mode  = '0644'
 ) {
 
   include resolv_conf::params
   
-  if $config_file {
-    $resolv_conf_file = $config_file
-    } else {
-    $resolv_conf_file = $resolv_conf::params::config_file
-  }
+  # if $config_file {
+  #   $resolv_conf_file = $config_file
+  #   } else {
+  #   $resolv_conf_file = $resolv_conf::params::config_file
+  # }
 
   file { "resolv.conf.$name":
     ensure  => file,
     path    => $resolv_conf_file,
-    owner   => 'root',
-    group   => $resolv_conf::params::group,
-    mode    => '0644',
+    owner   => $owner,
+    group   => $group,
+    mode    => $mode,
     content => template('resolv_conf/resolv.conf.erb'),
   }
 }
