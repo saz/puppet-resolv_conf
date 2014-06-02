@@ -19,7 +19,7 @@ define resolv_conf (
 
   file { "resolv.conf.$name":
     ensure  => file,
-    path    => $config_file
+    path    => $config_file,
     owner   => $owner,
     group   => $group,
     mode    => $mode,
