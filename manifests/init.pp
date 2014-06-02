@@ -1,13 +1,13 @@
-include resolv_conf::params
+# include resolv_conf::params
 
 define resolv_conf (
   $searchpath,
   $nameservers,
   $domainname = $::domain,
   $options = undef,
-  $config_file = $resolv_conf::params::config_file,
+  $config_file = $::resolv_conf::params::config_file,
   $owner = 'root',
-  $group = $resolv_conf::params::group,
+  $group = $::resolv_conf::params::group,
   $mode  = '0644'
 ) {
 
@@ -26,7 +26,4 @@ define resolv_conf (
     content => template('resolv_conf/resolv.conf.erb'),
   }
 }
-
-resolv_conf::params -> resolv_conf
-
 
