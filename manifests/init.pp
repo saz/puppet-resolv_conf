@@ -1,3 +1,5 @@
+class { '::resolv_conf::params': } ->
+
 define resolv_conf (
   $searchpath,
   $nameservers,
@@ -7,7 +9,7 @@ define resolv_conf (
   $owner = 'root',
   $group = $::resolv_conf::params::group,
   $mode  = '0644'
-) inherits resolv_conf::params {
+) {
 
   # if $config_file {
   #   $resolv_conf_file = $config_file
