@@ -1,9 +1,15 @@
 class resolv_conf(
-  $searchpath,
   $nameservers,
-  $domainname = $::domain,
+  $domainname = undef,
+  $searchpath = [],
   $options = undef
 ) inherits resolv_conf::params {
+
+  if ! $domainname and ! $searchpath {
+    $domainname_real = $::domain
+  } elsif $domainname and ! $searchpath {
+    $domainname_real = $domainname
+  }
 
   file { 'resolv.conf':
     ensure  => file,

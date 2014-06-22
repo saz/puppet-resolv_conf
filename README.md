@@ -9,13 +9,30 @@ If you find this module useful, send some bitcoins to 1Na3YFUmdxKxJLiuRXQYJU2kiN
 
 ```
     class { 'resolv_conf':
-      searchpath  => 'example.com',
       nameservers => ['192.168.1.1', '192.168.2.2', '192.168.3.3'],
     }
 ```
 
+### Different domain than current machine
+
+```puppet
+    class { 'resolv_conf':
+        nameservers => ['192.168.1.1', '192.168.2.2', '192.168.3.3'],
+        domain      => 'different.example.com',
+    }
+```
+
+### Different searchpath
+
+```puppet
+    class { 'resolv_conf':
+        nameservers => ['192.168.1.1', '192.168.2.2', '192.168.3.3'],
+        searchpath  => ['sub1.example.com', 'sub2.example.com'],
+    }
+```
+
 ## Class parameters
-* searchpath: String or Array. Required. List of search domains
 * nameservers: Array. Required. List of nameservers
 * domainname: String. Default: $::domain
+* searchpath: String or Array. List of search domains. Default: []
 * options: Array. Default: empty
