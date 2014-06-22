@@ -1,8 +1,0 @@
-name    'saz-resolv_conf'
-version '2.1.0'
-source 'https://github.com/saz/puppet-resolv_conf.git'
-author 'saz'
-license 'Apache License, Version 2.0'
-summary 'UNKNOWN'
-description 'Manage resolv.conf via Puppet'
-project_page 'https://github.com/saz/puppet-resolv_conf'
