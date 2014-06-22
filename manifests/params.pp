@@ -1,6 +1,6 @@
 class resolv_conf::params {
   case $::osfamily {
-    'Debian', 'RedHat': {
+    'Debian', 'RedHat', 'Suse': {
       $config_file = '/etc/resolv.conf'
       $group       = 'root'
     }
@@ -16,6 +16,7 @@ class resolv_conf::params {
       $config_file = '/etc/resolv.conf'
       $group       = 'root'
     }
+    
     default: {
       case $::operatingsystem {
         gentoo: {
