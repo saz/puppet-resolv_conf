@@ -4,15 +4,14 @@ class resolv_conf(
   $searchpath = [],
   $options = undef
 ) inherits resolv_conf::params {
+  import stdlib
+
+  validate_array( $nameservers )
 
   if ! $domainname and ! $searchpath {
     $domainname_real = $::domain
   } elsif $domainname and ! $searchpath {
     $domainname_real = $domainname
-  }
-
-  if ! $nameservers {
-    fail( "nameservers must be supplied" )
   }
 
   file { 'resolv.conf':
