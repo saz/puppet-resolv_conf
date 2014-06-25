@@ -4,7 +4,7 @@ class resolv_conf(
   $searchpath = [],
   $options = undef
 ) inherits resolv_conf::params {
-  import stdlib
+  include stdlib
 
   validate_array( $nameservers )
 
