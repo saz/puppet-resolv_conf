@@ -1,5 +1,5 @@
 class resolv_conf(
-  $nameservers,
+  $nameservers = undef,
   $domainname = undef,
   $searchpath = [],
   $options = undef
@@ -9,6 +9,10 @@ class resolv_conf(
     $domainname_real = $::domain
   } elsif $domainname and ! $searchpath {
     $domainname_real = $domainname
+  }
+
+  if ! $nameservers {
+    fail( "nameservers must be supplied" )
   }
 
   file { 'resolv.conf':
