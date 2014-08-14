@@ -1,7 +1,7 @@
 class resolv_conf(
   $nameservers = undef,
   $domainname = undef,
-  $searchpath = [],
+  $searchpath = undef,
   $options = undef
 ) inherits resolv_conf::params {
   include stdlib
