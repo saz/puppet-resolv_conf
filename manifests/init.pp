@@ -1,9 +1,12 @@
 class resolv_conf(
-  $nameservers,
+  $nameservers = undef,
   $domainname = undef,
   $searchpath = [],
   $options = undef
 ) inherits resolv_conf::params {
+  include stdlib
+
+  validate_array( $nameservers )
 
   if $domainname == undef and $searchpath == [] {
     $domainname_real = $::domain

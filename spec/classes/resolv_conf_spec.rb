@@ -122,11 +122,11 @@ describe 'resolv_conf' do
               'resolv.conf',
               'content'
             )
-            expected_lines = [
-#              "search #{param_hash[:searchpath]}",
-            ]
 
-            if(!param_hash[:searchpath].empty?)
+            expected_lines = []
+            if(param_hash[:searchpath].empty?)
+              expected_lines.push("domain #{param_hash[:domainname]}")
+            else
               if(param_hash[:searchpath].kind_of?(Array))
                 expected_lines.push("search " + param_hash[:searchpath].join(" "))
               else
