@@ -1,7 +1,7 @@
 # File managed by puppet
 
 <%- if @domainname_real -%>
-domain <%= @domainname %>
+domain <%= @domainname_real %>
 <%- end -%>
 <% if !@searchpath.empty? -%>
 <% if @searchpath.kind_of? Array -%>

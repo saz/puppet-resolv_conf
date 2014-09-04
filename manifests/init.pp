@@ -8,9 +8,9 @@ class resolv_conf(
 
   validate_array( $nameservers )
 
-  if ! $domainname and ! $searchpath {
+  if ! $domainname and empty($searchpath) {
     $domainname_real = $::domain
-  } elsif $domainname and ! $searchpath {
+  } elsif $domainname and empty($searchpath) {
     $domainname_real = $domainname
   }
 
