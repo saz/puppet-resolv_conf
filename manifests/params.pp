@@ -1,3 +1,11 @@
+# == Class: resolv_conf::params
+#
+# This base class contains default parameters
+#
+# === Variables
+#
+# === Inherits
+#
 class resolv_conf::params {
   case $::osfamily {
     'Debian', 'RedHat', 'Suse': {
