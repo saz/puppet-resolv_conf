@@ -8,7 +8,7 @@ script: bundle exec rake SPEC_OPTS='--format documentation'
 rvm:
   - 1.9.3
   - 2.0.0
-gemfile: .travis/Gemfile
+gemfile: Gemfile
 env:
   matrix:
     - PUPPET_GEM_VERSION="~> 2.7.0"
@@ -16,6 +16,7 @@ env:
     - PUPPET_GEM_VERSION="~> 3.1.0"
     - PUPPET_GEM_VERSION="~> 3.2.0"
     - PUPPET_GEM_VERSION="~> 3.3.0"
+    - PUPPET_GEM_VERSION="~> 3.7.1"
 matrix:
   include:
     - rvm: 1.9.3

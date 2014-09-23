@@ -1,6 +1,6 @@
 {
   "name": "saz-resolv_conf",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "author": "saz",
   "summary": "UNKNOWN",
   "license": "Apache License, Version 2.0",
@@ -54,6 +54,9 @@
   ],
   "description": "Manage resolv.conf via Puppet",
   "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 3.2.0"}
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.2.0"
+    }
   ]
 }
