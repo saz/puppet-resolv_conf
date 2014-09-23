@@ -4,8 +4,6 @@ class resolv_conf(
   $searchpath = [],
   $options = undef
 ) inherits resolv_conf::params {
-  include stdlib
-
   validate_array( $nameservers )
 
   if ! $domainname and ! $searchpath {

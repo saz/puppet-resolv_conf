@@ -54,6 +54,6 @@
   ],
   "description": "Manage resolv.conf via Puppet",
   "dependencies": [
-  
+    {"name":"puppetlabs/stdlib","version_requirement":">= 3.2.0"}
   ]
 }
