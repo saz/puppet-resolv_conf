@@ -18,7 +18,7 @@ If you find this module useful, send some bitcoins to 1Na3YFUmdxKxJLiuRXQYJU2kiN
 ```puppet
     class { 'resolv_conf':
         nameservers => ['192.168.1.1', '192.168.2.2', '192.168.3.3'],
-        domain      => 'different.example.com',
+        domainname  => 'different.example.com',
     }
 ```
 
