@@ -6,10 +6,12 @@ class resolv_conf(
 ) inherits resolv_conf::params {
   validate_array( $nameservers )
 
-  if ! $domainname and empty($searchpath) {
+  if $domainname == undef and $searchpath == [] {
     $domainname_real = $::domain
-  } elsif $domainname and empty($searchpath) {
+  } elsif $domainname != undef and $searchpath == [] {
     $domainname_real = $domainname
+  } elsif $domainname != undef and $searchpath != [] {
+    fail("domainname and searchpath are mutually exclusive parameters")
   }
 
   file { 'resolv.conf':
