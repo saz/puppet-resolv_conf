@@ -7,7 +7,7 @@ class resolv_conf::solaris (
 
   svccfg { 'resolv-nameserver':
     ensure => present,
-    fmri => 'svc:/network/dns/client,
+    fmri => 'svc:/network/dns/client',
     property => 'config/nameserver',
     type => 'array',
     value => $nameservers,
@@ -15,7 +15,7 @@ class resolv_conf::solaris (
 
   svccfg { 'resolv-searchpath':
     ensure => present,
-    fmri => 'svc:/network/dns/client,
+    fmri => 'svc:/network/dns/client',
     property => 'config/search',
     type => 'string',
     value => $searchpath,
