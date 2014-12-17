@@ -5,10 +5,10 @@ class resolv_conf::solaris (
   $options,
 ) {
 
-  $nameserver_string = join(any2array($nameserver), ' ')
+  $nameservers_string = join($nameservers, ' ')
 
-  exec { "/usr/sbin/svccfg -s dns/client setprop config/nameserver = net_address: \"(${nameserver_string})\"":
-    unless => "/usr/sbin/svccfg -s dns/client listprop config/nameserver | grep \"${nameserver_string}\"",
+  exec { "/usr/sbin/svccfg -s dns/client setprop config/nameserver = net_address: \"(${nameservers_string})\"":
+    unless => "/usr/sbin/svccfg -s dns/client listprop config/nameserver | grep \"${nameservers_string}\"",
   }
     
 }
