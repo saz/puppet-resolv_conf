@@ -11,4 +11,10 @@ class resolv_conf::solaris (
     unless => "/usr/sbin/svccfg -s dns/client listprop config/nameserver | grep \"${nameservers_string}\"",
   }
     
+  $search_string = join(any2array($searchpath), ' ')
+
+  exec { "/usr/sbin/svccfg -s dns/client setprop config/search = astring: \"(${search_string})\"":
+    unless => "/usr/sbin/svccfg -s dns/client listprop config/search | grep \"${search_string}\"",
+  }
+
 }
