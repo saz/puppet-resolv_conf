@@ -27,17 +27,17 @@ class resolv_conf(
   } elsif $domainname != undef and $searchpath == [] {
     $domainname_real = $domainname
   } elsif $domainname != undef and $searchpath != [] {
-    fail("domainname and searchpath are mutually exclusive parameters")
+    fail('domainname and searchpath are mutually exclusive parameters')
   }
 
-  if $osfamily == 'Solaris' and $operatingsystemmajrelease == '11' {
+  if $::osfamily == 'Solaris' and $::operatingsystemmajrelease == '11' {
     class { 'resolv_conf::solaris':
-      domainname => $domainname_real,
-      searchpath => $searchpath,
+      domainname  => $domainname_real,
+      searchpath  => $searchpath,
       nameservers => $nameservers,
-      options => $options,
+      options     => $options,
     }
-  } else { 
+  } else {
     file { 'resolv.conf':
       ensure  => file,
       path    => $resolv_conf::params::config_file,
