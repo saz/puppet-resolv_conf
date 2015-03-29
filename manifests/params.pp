@@ -24,6 +24,7 @@ class resolv_conf::params {
       $config_file = '/etc/resolv.conf'
       $group       = 'root'
     }
+    'Solaris': { }
     
     default: {
       case $::operatingsystem {
