@@ -26,7 +26,7 @@ class resolv_conf(
     $domainname_real = $::domain
   } elsif $domainname != undef and $searchpath == [] {
     $domainname_real = $domainname
-  } elsif $domainname != undef and $searchpath != [] {
+  } elsif $domainname != undef and $searchpath != [] and $::osfamily != 'Solaris' {
     fail('domainname and searchpath are mutually exclusive parameters')
   }
 
