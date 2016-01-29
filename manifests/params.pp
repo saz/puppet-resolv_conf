@@ -24,7 +24,11 @@ class resolv_conf::params {
       $config_file = '/etc/resolv.conf'
       $group       = 'root'
     }
-    'Solaris': { }
+    'Solaris': {
+      # This will only be used on Solaris < 11
+      $config_file = '/etc/resolv.conf'
+      $group       = 'root'
+    }
     
     default: {
       case $::operatingsystem {
