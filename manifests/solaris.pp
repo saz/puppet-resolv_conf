@@ -1,3 +1,13 @@
+# == Class: resolv_conf::solaris
+#
+# This class handles solaris
+#
+# == Variables
+#  [*domainname*]
+#  [*searchpath*]
+#  [*nameservers*]
+#  [*options*]
+#
 class resolv_conf::solaris (
   $domainname,
   $searchpath,
