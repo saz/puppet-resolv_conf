@@ -15,11 +15,11 @@
 #  [*puppetlabs-stdlib*](https://github.com/puppetlabs/puppetlabs-stdlib)
 #
 class resolv_conf(
-  $nameservers = undef,
+  $nameservers,
   $domainname = undef,
   $searchpath = [],
   $options = undef,
-  $config_file = $resolv_conf::params::config_file ,
+  $config_file = $resolv_conf::params::config_file
 ) inherits resolv_conf::params {
   validate_array( $nameservers )
 
@@ -32,18 +32,17 @@ class resolv_conf(
   }
 
   if $::osfamily == 'Solaris' and $::operatingsystemmajrelease == '11' {
-    class { 'resolv_conf::solaris':
+    class { '::resolv_conf::solaris':
       domainname  => $domainname_real,
       searchpath  => $searchpath,
       nameservers => $nameservers,
       options     => $options,
     }
   } else {
-    file { $config_file :
+    file { $config_file:
       ensure  => file,
-      path    => $config_file,
       owner   => 'root',
-      group   => $resolv_conf::params::group,
+      group   => 0,
       mode    => '0644',
       content => template('resolv_conf/resolv.conf.erb'),
     }

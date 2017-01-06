@@ -1,1 +1,1 @@
-include resolv_conf
+include ::resolv_conf
