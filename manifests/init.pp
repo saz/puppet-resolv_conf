@@ -18,7 +18,8 @@ class resolv_conf(
   $nameservers = undef,
   $domainname = undef,
   $searchpath = [],
-  $options = undef
+  $options = undef,
+  $config_file = $resolv_conf::params::config_file ,
 ) inherits resolv_conf::params {
   validate_array( $nameservers )
 
@@ -38,9 +39,9 @@ class resolv_conf(
       options     => $options,
     }
   } else {
-    file { 'resolv.conf':
+    file { $config_file :
       ensure  => file,
-      path    => $resolv_conf::params::config_file,
+      path    => $config_file,
       owner   => 'root',
       group   => $resolv_conf::params::group,
       mode    => '0644',
