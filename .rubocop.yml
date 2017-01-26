@@ -70,7 +70,7 @@ Style/WhileUntilModifier:
 Lint/AmbiguousRegexpLiteral:
   Enabled: true
 
-Lint/Eval:
+Security/Eval:
   Enabled: true
 
 Lint/BlockAlignment:
