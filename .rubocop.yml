@@ -133,6 +133,10 @@ Style/AlignParameters:
 Metrics/BlockNesting:
   Enabled: true
 
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
+
 Style/AsciiComments:
   Enabled: true
 
