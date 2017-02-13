@@ -24,6 +24,9 @@ class resolv_conf::params {
       # This will only be used on Solaris < 11
       $config_file = '/etc/resolv.conf'
     }
+    'AIX': {
+      $config_file = '/etc/resolv.conf'
+    }
     default: {
       case $::operatingsystem {
         'Gentoo': {

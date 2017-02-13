@@ -1,6 +1,6 @@
 {
   "name": "saz-resolv_conf",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "author": "saz",
   "summary": "UNKNOWN",
   "license": "Apache-2.0",
@@ -40,6 +40,9 @@
     },
     {
       "operatingsystem": "ArchLinux"
+    },
+    {
+      "operatingsystem": "AIX"
     }
   ],
   "requirements": [
