@@ -36,7 +36,7 @@ describe 'resolv_conf' do
         param_set
       end
 
-      %w(Debian Redhat).each do |osfamily|
+      %w[Debian Redhat].each do |osfamily|
         let :facts do
           {
             osfamily: osfamily,
@@ -84,7 +84,7 @@ describe 'resolv_conf' do
         param_set
       end
 
-      %w(Debian Redhat).each do |osfamily|
+      %w[Debian Redhat].each do |osfamily|
         let :facts do
           {
             osfamily: osfamily,
@@ -162,7 +162,7 @@ describe 'resolv_conf' do
         param_set
       end
 
-      %w(Debian Redhat).each do |osfamily|
+      %w[Debian Redhat].each do |osfamily|
         let :facts do
           {
             osfamily: osfamily,
@@ -235,7 +235,7 @@ describe 'resolv_conf' do
         param_set
       end
 
-      %w(Debian Redhat).each do |osfamily|
+      %w[Debian Redhat].each do |osfamily|
         let :facts do
           {
             osfamily: osfamily,
