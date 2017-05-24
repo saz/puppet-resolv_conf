@@ -53,6 +53,8 @@ describe 'resolv_conf' do
     end
   end
 
+  # rubocop:disable RSpec/OverwritingSetup
+  # rubocop:disable RSpec/ScatteredLet
   let :default_params do
     {
       searchpath: 'example.com',
@@ -141,7 +143,6 @@ describe 'resolv_conf' do
       domainname: 'domain.tld'
     }
   end
-
   [
     {
       nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
@@ -212,6 +213,9 @@ describe 'resolv_conf' do
       nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1']
     }
   end
+
+  # rubocop:enable RSpec/OverwritingSetup
+  # rubocop:enable RSpec/ScatteredLet
 
   [
     {
