@@ -14,5 +14,7 @@ search <%= @searchpath %>
 nameserver <%= ns %>
 <% end -%>
 <% if @options && !@options.empty? -%>
-options <%= @options.join(" ") %>
+<% @options.each do |option| -%>
+options <%= option %>
+<% end -%>
 <% end -%>
