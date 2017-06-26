@@ -2,9 +2,7 @@ require 'spec_helper'
 describe 'resolv_conf' do
   let :default_params do
     {
-      searchpath: 'example.com',
-      nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
-      domainname: 'domain.tld'
+      nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1']
     }
   end
 
@@ -36,7 +34,7 @@ describe 'resolv_conf' do
         param_set
       end
 
-      %w(Debian Redhat).each do |osfamily|
+      %w[Debian Redhat].each do |osfamily|
         let :facts do
           {
             osfamily: osfamily,
@@ -51,13 +49,6 @@ describe 'resolv_conf' do
         end
       end
     end
-  end
-
-  let :default_params do
-    {
-      searchpath: 'example.com',
-      nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1']
-    }
   end
 
   [
@@ -84,7 +75,7 @@ describe 'resolv_conf' do
         param_set
       end
 
-      %w(Debian Redhat).each do |osfamily|
+      %w[Debian Redhat].each do |osfamily|
         let :facts do
           {
             osfamily: osfamily,
@@ -135,13 +126,6 @@ describe 'resolv_conf' do
     end
   end
 
-  let :default_params do
-    {
-      nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
-      domainname: 'domain.tld'
-    }
-  end
-
   [
     {
       nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
@@ -162,7 +146,7 @@ describe 'resolv_conf' do
         param_set
       end
 
-      %w(Debian Redhat).each do |osfamily|
+      %w[Debian Redhat].each do |osfamily|
         let :facts do
           {
             osfamily: osfamily,
@@ -207,12 +191,6 @@ describe 'resolv_conf' do
     end
   end
 
-  let :default_params do
-    {
-      nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1']
-    }
-  end
-
   [
     {
       nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1']
@@ -235,7 +213,7 @@ describe 'resolv_conf' do
         param_set
       end
 
-      %w(Debian Redhat).each do |osfamily|
+      %w[Debian Redhat].each do |osfamily|
         let :facts do
           {
             osfamily: osfamily,
