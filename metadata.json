@@ -1,6 +1,6 @@
 {
   "name": "saz-resolv_conf",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "author": "saz",
   "summary": "UNKNOWN",
   "license": "Apache-2.0",
@@ -40,23 +40,16 @@
     },
     {
       "operatingsystem": "ArchLinux"
+    },
+    {
+      "operatingsystem": "AIX"
     }
   ],
   "requirements": [
-    {
-      "name": "pe",
-      "version_requirement": ">=3.2.0 < 3.4.0"
-    },
-    {
-      "name": "puppet",
-      "version_requirement": "3.x"
-    }
+    { "name": "puppet", "version_requirement": ">=3.0.0 <5.0.0" }
   ],
   "description": "Manage resolv.conf via Puppet",
   "dependencies": [
-    {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 3.2.0"
-    }
+    { "name": "puppetlabs/stdlib", "version_requirement": ">=2.6.0 < 5.0.0" }
   ]
 }
