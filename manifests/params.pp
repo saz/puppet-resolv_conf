@@ -8,7 +8,7 @@
 #
 class resolv_conf::params {
   case $::osfamily {
-    'Debian', 'RedHat', 'Suse': {
+    'Debian', 'RedHat', 'Suse', 'Linux': {
       $config_file = '/etc/resolv.conf'
     }
     'FreeBSD': {
