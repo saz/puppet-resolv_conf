@@ -301,6 +301,9 @@ Style/EmptyLiteral:
 Metrics/LineLength:
   Enabled: false
 
+Style/MethodCallWithoutArgsParentheses:
+  Enabled: true
+
 Style/MethodDefParentheses:
   Enabled: true
 

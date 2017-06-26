@@ -33,12 +33,28 @@ class resolv_conf(
     }
   }
 
-  file { $config_file:
-    ensure  => file,
-    owner   => 'root',
-    group   => 0,
-    mode    => '0644',
-    content => template('resolv_conf/resolv.conf.erb'),
+  if $::osfamily == 'Debian' and $::lsbdistcodename == 'xenial' {
+    file { '/run/resolvconf/resolv.conf':
+      ensure  => file,
+      owner   => 'root',
+      group   => 0,
+      mode    => '0644',
+      content => template('resolv_conf/resolv.conf.erb'),
+    }
+    file { '/etc/resolv.conf':
+      ensure  => link,
+      target  => '/run/resolvconf/resolv.conf',
+      require => File['/run/resolvconf/resolv.conf'],
+    }
+  }
+  else {
+    file { $config_file:
+      ensure  => file,
+      owner   => 'root',
+      group   => 0,
+      mode    => '0644',
+      content => template('resolv_conf/resolv.conf.erb'),
+    }
   }
 
   if $::osfamily == 'Solaris' and $::operatingsystemmajrelease == '11' {
