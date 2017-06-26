@@ -118,7 +118,7 @@ describe 'resolv_conf' do
 
             if param_hash[:options] && !param_hash[:options].empty?
               param_hash[:options].each do |option|
-                expected_lines.push("option #{option}")
+                expected_lines.push("options #{option}")
               end
             end
             (content.split("\n") & expected_lines).should =~ expected_lines
@@ -185,7 +185,7 @@ describe 'resolv_conf' do
 
             if param_hash[:options] && !param_hash[:options].empty?
               param_hash[:options].each do |option|
-                expected_lines.push("option #{option}")
+                expected_lines.push("options #{option}")
               end
             end
             (content.split("\n") & expected_lines).should =~ expected_lines
@@ -254,7 +254,7 @@ describe 'resolv_conf' do
 
             if param_hash[:options] && !param_hash[:options].empty?
               param_hash[:options].each do |option|
-                expected_lines.push("option #{option}")
+                expected_lines.push("options #{option}")
               end
             end
             (content.split("\n") & expected_lines).should =~ expected_lines
