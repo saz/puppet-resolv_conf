@@ -56,9 +56,11 @@ class resolv_conf(
     }
   }
 
-  if $::osfamily == 'Solaris' and $::operatingsystemmajrelease == '11' {
+  if $::osfamily == 'Solaris' and 
+  ($::operatingsystemmajrelease == '11' or $::operatingsystemmajrelease == '12') {
     exec { 'load resolv.conf in smf':
-      command     => '/usr/sbin/nscfg import -f dns/client',
+      command     => 'nscfg import -f dns/client && svcadm refresh dns/client',
+      path => '/usr/sbin/',
       refreshonly => true,
       subscribe   => File[$resolv_conf::params::config_file],
     }
