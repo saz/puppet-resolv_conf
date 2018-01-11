@@ -15,11 +15,11 @@
 #  [*puppetlabs-stdlib*](https://github.com/puppetlabs/puppetlabs-stdlib)
 #
 class resolv_conf(
-  Array $nameservers,
-  $domainname = undef,
-  $searchpath = [],
-  $options = undef,
-  String $config_file = $resolv_conf::params::config_file
+  Array                         $nameservers,
+  Optional[String]              $domainname  = undef,
+  Variant[Array[String],String] $searchpath  = [],
+  Optional[Array]               $options     = undef,
+  String                        $config_file = $resolv_conf::params::config_file
 ) inherits resolv_conf::params {
 
   if $domainname == undef and $searchpath == [] {
