@@ -1,6 +1,6 @@
 require: rubocop-rspec
 AllCops:
-  TargetRubyVersion: 1.9
+  TargetRubyVersion: 2.2
   Include:
     - ./**/*.rb
   Exclude:
@@ -12,482 +12,470 @@ AllCops:
     - Gemfile
     - Rakefile
 Lint/ConditionPosition:
-  Enabled: True
+  Enabled: true
 
 Lint/ElseLayout:
-  Enabled: True
+  Enabled: true
 
 Lint/UnreachableCode:
-  Enabled: True
+  Enabled: true
 
 Lint/UselessComparison:
-  Enabled: True
+  Enabled: true
 
 Lint/EnsureReturn:
-  Enabled: True
+  Enabled: true
 
 Lint/HandleExceptions:
-  Enabled: True
-
-Lint/LiteralInCondition:
-  Enabled: True
+  Enabled: true
 
 Lint/ShadowingOuterLocalVariable:
-  Enabled: True
+  Enabled: true
 
 Lint/LiteralInInterpolation:
-  Enabled: True
+  Enabled: true
 
 Style/HashSyntax:
-  Enabled: True
+  Enabled: false
 
 Style/RedundantReturn:
-  Enabled: True
+  Enabled: true
 
 Lint/AmbiguousOperator:
-  Enabled: True
+  Enabled: true
 
 Lint/AssignmentInCondition:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceBeforeComment:
-  Enabled: True
+  Enabled: true
 
 Style/AndOr:
-  Enabled: True
+  Enabled: true
 
 Style/RedundantSelf:
-  Enabled: True
-
-Metrics/BlockLength:
-  Enabled: False
+  Enabled: true
 
 # Method length is not necessarily an indicator of code quality
 Metrics/MethodLength:
-  Enabled: False
+  Enabled: false
 
 # Module length is not necessarily an indicator of code quality
 Metrics/ModuleLength:
-  Enabled: False
+  Enabled: false
 
 Style/WhileUntilModifier:
-  Enabled: True
+  Enabled: true
 
 Lint/AmbiguousRegexpLiteral:
-  Enabled: True
+  Enabled: true
 
 Security/Eval:
-  Enabled: True
+  Enabled: true
 
 Lint/BlockAlignment:
-  Enabled: True
+  Enabled: true
 
 Lint/DefEndAlignment:
-  Enabled: True
+  Enabled: true
 
 Lint/EndAlignment:
-  Enabled: True
+  Enabled: true
 
 Lint/DeprecatedClassMethods:
-  Enabled: True
+  Enabled: true
 
 Lint/Loop:
-  Enabled: True
+  Enabled: true
 
 Lint/ParenthesesAsGroupedExpression:
-  Enabled: True
+  Enabled: true
 
 Lint/RescueException:
-  Enabled: True
+  Enabled: true
 
 Lint/StringConversionInInterpolation:
-  Enabled: True
+  Enabled: true
 
 Lint/UnusedBlockArgument:
-  Enabled: True
+  Enabled: true
 
 Lint/UnusedMethodArgument:
-  Enabled: True
+  Enabled: true
 
 Lint/UselessAccessModifier:
-  Enabled: True
+  Enabled: true
 
 Lint/UselessAssignment:
-  Enabled: True
+  Enabled: true
 
 Lint/Void:
-  Enabled: True
+  Enabled: true
 
 Layout/AccessModifierIndentation:
-  Enabled: True
+  Enabled: true
 
-Style/AccessorMethodName:
-  Enabled: True
+Naming/AccessorMethodName:
+  Enabled: true
 
 Style/Alias:
-  Enabled: True
+  Enabled: true
 
 Layout/AlignArray:
-  Enabled: True
+  Enabled: true
 
 Layout/AlignHash:
-  Enabled: True
+  Enabled: true
 
 Layout/AlignParameters:
-  Enabled: True
+  Enabled: true
 
 Metrics/BlockNesting:
-  Enabled: True
+  Enabled: true
 
 Style/AsciiComments:
-  Enabled: True
+  Enabled: true
 
 Style/Attr:
-  Enabled: True
+  Enabled: true
 
 Style/BracesAroundHashParameters:
-  Enabled: True
+  Enabled: true
 
 Style/CaseEquality:
-  Enabled: True
+  Enabled: true
 
 Layout/CaseIndentation:
-  Enabled: True
+  Enabled: true
 
 Style/CharacterLiteral:
-  Enabled: True
+  Enabled: true
 
-Style/ClassAndModuleCamelCase:
-  Enabled: True
+Naming/ClassAndModuleCamelCase:
+  Enabled: true
 
 Style/ClassAndModuleChildren:
-  Enabled: False
+  Enabled: false
 
 Style/ClassCheck:
-  Enabled: True
+  Enabled: true
 
 # Class length is not necessarily an indicator of code quality
 Metrics/ClassLength:
-  Enabled: False
+  Enabled: false
 
 Style/ClassMethods:
-  Enabled: True
+  Enabled: true
 
 Style/ClassVars:
-  Enabled: True
+  Enabled: true
 
 Style/WhenThen:
-  Enabled: True
+  Enabled: true
 
 Style/WordArray:
-  Enabled: True
+  Enabled: true
 
 Style/UnneededPercentQ:
-  Enabled: True
+  Enabled: true
 
 Layout/Tab:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceBeforeSemicolon:
-  Enabled: True
+  Enabled: true
 
 Layout/TrailingBlankLines:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceInsideBlockBraces:
-  Enabled: True
-
-Layout/SpaceInsideBrackets:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceInsideHashLiteralBraces:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceInsideParens:
-  Enabled: True
+  Enabled: true
 
 Layout/LeadingCommentSpace:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceBeforeFirstArg:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceAfterColon:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceAfterComma:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceAfterMethodName:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceAfterNot:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceAfterSemicolon:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceAroundEqualsInParameterDefault:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceAroundOperators:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceBeforeBlockBraces:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceBeforeComma:
-  Enabled: True
+  Enabled: true
 
 Style/CollectionMethods:
-  Enabled: True
+  Enabled: true
 
 Layout/CommentIndentation:
-  Enabled: True
+  Enabled: true
 
 Style/ColonMethodCall:
-  Enabled: True
+  Enabled: true
 
 Style/CommentAnnotation:
-  Enabled: True
+  Enabled: true
 
 # 'Complexity' is very relative
 Metrics/CyclomaticComplexity:
-  Enabled: False
+  Enabled: false
 
-Style/ConstantName:
-  Enabled: True
+Naming/ConstantName:
+  Enabled: true
 
 Style/Documentation:
-  Enabled: False
+  Enabled: false
 
 Style/DefWithParentheses:
-  Enabled: True
+  Enabled: true
 
 Style/PreferredHashMethods:
-  Enabled: True
+  Enabled: true
 
 Layout/DotPosition:
   EnforcedStyle: trailing
 
 Style/DoubleNegation:
-  Enabled: True
+  Enabled: true
 
 Style/EachWithObject:
-  Enabled: True
+  Enabled: true
 
 Layout/EmptyLineBetweenDefs:
-  Enabled: True
+  Enabled: true
 
 Layout/IndentArray:
-  Enabled: True
+  Enabled: true
 
 Layout/IndentHash:
-  Enabled: True
+  Enabled: true
 
 Layout/IndentationConsistency:
-  Enabled: True
+  Enabled: true
 
 Layout/IndentationWidth:
-  Enabled: True
+  Enabled: true
 
 Layout/EmptyLines:
-  Enabled: True
+  Enabled: true
 
 Layout/EmptyLinesAroundAccessModifier:
-  Enabled: True
+  Enabled: true
 
 Style/EmptyLiteral:
-  Enabled: True
+  Enabled: true
 
 # Configuration parameters: AllowURI, URISchemes.
 Metrics/LineLength:
-  Enabled: False
-
-Style/MethodCallWithoutArgsParentheses:
-  Enabled: True
+  Enabled: false
 
 Style/MethodDefParentheses:
-  Enabled: True
+  Enabled: true
 
 Style/LineEndConcatenation:
-  Enabled: True
+  Enabled: true
 
 Layout/TrailingWhitespace:
-  Enabled: True
+  Enabled: true
 
 Style/StringLiterals:
-  Enabled: True
+  Enabled: true
 
 Style/TrailingCommaInArguments:
-  Enabled: True
+  Enabled: true
 
 Style/TrailingCommaInLiteral:
-  Enabled: True
+  Enabled: true
 
 Style/GlobalVars:
-  Enabled: True
+  Enabled: true
 
 Style/GuardClause:
-  Enabled: True
+  Enabled: true
 
 Style/IfUnlessModifier:
-  Enabled: True
+  Enabled: true
 
 Style/MultilineIfThen:
-  Enabled: True
+  Enabled: true
 
 Style/NegatedIf:
-  Enabled: True
+  Enabled: true
 
 Style/NegatedWhile:
-  Enabled: True
+  Enabled: true
 
 Style/Next:
-  Enabled: True
+  Enabled: true
 
 Style/SingleLineBlockParams:
-  Enabled: True
+  Enabled: true
 
 Style/SingleLineMethods:
-  Enabled: True
+  Enabled: true
 
 Style/SpecialGlobalVars:
-  Enabled: True
+  Enabled: true
 
 Style/TrivialAccessors:
-  Enabled: True
+  Enabled: true
 
 Style/UnlessElse:
-  Enabled: True
+  Enabled: true
 
 Style/VariableInterpolation:
-  Enabled: True
+  Enabled: true
 
-Style/VariableName:
-  Enabled: True
+Naming/VariableName:
+  Enabled: true
 
 Style/WhileUntilDo:
-  Enabled: True
+  Enabled: true
 
 Style/EvenOdd:
-  Enabled: True
+  Enabled: true
 
-Style/FileName:
-  Enabled: True
+Naming/FileName:
+  Enabled: true
 
 Style/For:
-  Enabled: True
+  Enabled: true
 
 Style/Lambda:
-  Enabled: True
+  Enabled: true
 
-Style/MethodName:
-  Enabled: True
+Naming/MethodName:
+  Enabled: true
 
 Style/MultilineTernaryOperator:
-  Enabled: True
+  Enabled: true
 
 Style/NestedTernaryOperator:
-  Enabled: True
+  Enabled: true
 
 Style/NilComparison:
-  Enabled: True
+  Enabled: true
 
 Style/FormatString:
-  Enabled: True
+  Enabled: true
 
 Style/MultilineBlockChain:
-  Enabled: True
+  Enabled: true
 
 Style/Semicolon:
-  Enabled: True
+  Enabled: true
 
 Style/SignalException:
-  Enabled: True
+  Enabled: true
 
 Style/NonNilCheck:
-  Enabled: True
+  Enabled: true
 
 Style/Not:
-  Enabled: True
+  Enabled: true
 
 Style/NumericLiterals:
-  Enabled: True
+  Enabled: true
 
 Style/OneLineConditional:
-  Enabled: True
+  Enabled: true
 
-Style/OpMethod:
-  Enabled: True
+Naming/BinaryOperatorParameterName:
+  Enabled: true
 
 Style/ParenthesesAroundCondition:
-  Enabled: True
+  Enabled: true
 
 Style/PercentLiteralDelimiters:
-  Enabled: True
+  Enabled: true
 
 Style/PerlBackrefs:
-  Enabled: True
+  Enabled: true
 
-Style/PredicateName:
-  Enabled: True
+Naming/PredicateName:
+  Enabled: true
 
 Style/RedundantException:
-  Enabled: True
+  Enabled: true
 
 Style/SelfAssignment:
-  Enabled: True
+  Enabled: true
 
 Style/Proc:
-  Enabled: True
+  Enabled: true
 
 Style/RaiseArgs:
-  Enabled: True
+  Enabled: true
 
 Style/RedundantBegin:
-  Enabled: True
+  Enabled: true
 
 Style/RescueModifier:
-  Enabled: True
+  Enabled: true
 
 # based on https://github.com/voxpupuli/modulesync_config/issues/168
 Style/RegexpLiteral:
   EnforcedStyle: percent_r
-  Enabled: True
+  Enabled: true
 
 Lint/UnderscorePrefixedVariableName:
-  Enabled: True
+  Enabled: true
 
 Metrics/ParameterLists:
-  Enabled: False
+  Enabled: false
 
 Lint/RequireParentheses:
-  Enabled: True
+  Enabled: true
 
 Layout/SpaceBeforeFirstArg:
-  Enabled: True
+  Enabled: true
 
 Style/ModuleFunction:
-  Enabled: True
+  Enabled: true
 
 Lint/Debugger:
-  Enabled: True
+  Enabled: true
 
 Style/IfWithSemicolon:
-  Enabled: True
+  Enabled: true
 
 Style/Encoding:
-  Enabled: True
+  Enabled: true
 
 Style/BlockDelimiters:
-  Enabled: True
+  Enabled: true
 
 Style/FormatStringToken:
   Enabled: false
 
 Layout/MultilineBlockLayout:
-  Enabled: True
+  Enabled: true
 
 # 'Complexity' is very relative
 Metrics/AbcSize:
@@ -501,10 +489,13 @@ Metrics/PerceivedComplexity:
   Enabled: False
 
 Lint/UselessAssignment:
-  Enabled: True
+  Enabled: true
 
 Layout/ClosingParenthesisIndentation:
-  Enabled: True
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
 
 # RSpec
 
@@ -516,17 +507,8 @@ RSpec/DescribeClass:
 RSpec/ExampleLength:
   Enabled: False
 
-RSpec/NamedSubject:
-  Enabled: False
+RSpec/NestedGroups:                                                                                                                                                                                              
+  Max: 4 
 
-# disabled for now since they cause a lot of issues
-# these issues aren't easy to fix
-RSpec/RepeatedDescription:
-  Enabled: False
-
-RSpec/NestedGroups:
-  Enabled: False
-
-# disable Yaml safe_load. This is needed to support ruby2.0.0 development envs
-Security/YAMLLoad:
-  Enabled: false
+RSpec/MultipleExpectations:
+  Max: 2
