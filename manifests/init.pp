@@ -8,19 +8,21 @@
 #  [*searchpath*]
 #  [*options*]
 #
-# === Inherits
-#  [*resolv_conf::params*]
-#
 # === Requires
 #  [*puppetlabs-stdlib*](https://github.com/puppetlabs/puppetlabs-stdlib)
 #
-class resolv_conf(
+class resolv_conf (
   Array                         $nameservers,
-  Optional[String]              $domainname  = undef,
-  Variant[Array[String],String] $searchpath  = [],
-  Optional[Array]               $options     = undef,
-  String                        $config_file = $resolv_conf::params::config_file
-) inherits resolv_conf::params {
+  String                        $config_file,
+  Boolean                       $use_resolvconf,
+  Optional[String]              $update_cmd,
+  Optional[String]              $package,
+  Boolean                       $manage_package,
+  String                        $package_ensure,
+  Optional[String]              $domainname = undef,
+  Variant[Array[String],String] $searchpath = [],
+  Optional[Array]               $options    = undef,
+) {
 
   if $domainname == undef and $searchpath == [] {
     $domainname_real = $::domain
@@ -32,7 +34,11 @@ class resolv_conf(
     }
   }
 
-  if $::osfamily == 'Debian' and $::lsbdistcodename == 'xenial' {
+  if $manage_package {
+    ensure_packages([$package], {'ensure' => $package_ensure})
+  }
+
+  if $use_resolvconf {
     file { '/run/resolvconf/resolv.conf':
       ensure  => file,
       owner   => 'root',
@@ -45,8 +51,7 @@ class resolv_conf(
       target  => '/run/resolvconf/resolv.conf',
       require => File['/run/resolvconf/resolv.conf'],
     }
-  }
-  else {
+  } else {
     file { $config_file:
       ensure  => file,
       owner   => 'root',
@@ -56,9 +61,9 @@ class resolv_conf(
     }
   }
 
-  if $::osfamily == 'Solaris' and $::operatingsystemmajrelease == '11' {
+  if $update_cmd {
     exec { 'load resolv.conf in smf':
-      command     => '/usr/sbin/nscfg import -f dns/client',
+      command     => $update_cmd,
       refreshonly => true,
       subscribe   => File[$resolv_conf::params::config_file],
     }

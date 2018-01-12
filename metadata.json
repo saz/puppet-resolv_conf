@@ -2,7 +2,8 @@
   "name": "saz-resolv_conf",
   "version": "3.3.0",
   "author": "saz",
-  "summary": "UNKNOWN",
+  "summary": "Manage resolv.conf via Puppet",
+  "description": "Manage resolv.conf via Puppet",
   "license": "Apache-2.0",
   "source": "https://github.com/saz/puppet-resolv_conf.git",
   "project_page": "https://github.com/saz/puppet-resolv_conf",
@@ -46,9 +47,8 @@
     }
   ],
   "requirements": [
-    { "name": "puppet", "version_requirement": ">=4.0.0 <5.0.0" }
+    { "name": "puppet", "version_requirement": ">=4.0.0 <6.0.0" }
   ],
-  "description": "Manage resolv.conf via Puppet",
   "dependencies": [
     { "name": "puppetlabs/stdlib", "version_requirement": ">=2.6.0 < 5.0.0" }
   ]
