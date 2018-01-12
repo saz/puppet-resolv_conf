@@ -14,14 +14,12 @@ script:
 matrix:
   fast_finish: true
   include:
-  - rvm: 2.1
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
   - rvm: 2.2
     env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
   - rvm: 2.3.1
     env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=rubocop
-  - rvm: 2.3.1
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=build FORGEDEPLOY=true
+  - rvm: 2.4
+    env: PUPPET_VERSION="~> 5.0" STRICT_VARIABLES="yes" CHECK=build FORGEDEPLOY=true
 notifications:
   email: false
 deploy:
@@ -32,5 +30,4 @@ deploy:
   on:
     tags: true
     all_branches: true
-    rvm: 2.3.1
     condition: "$FORGEDEPLOY = true"
