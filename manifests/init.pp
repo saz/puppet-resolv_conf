@@ -14,6 +14,7 @@
 class resolv_conf (
   Array                         $nameservers,
   String                        $config_file,
+  String                        $config_template,
   Boolean                       $use_resolvconf,
   Optional[String]              $update_cmd,
   Optional[String]              $package,
@@ -44,7 +45,7 @@ class resolv_conf (
       owner   => 'root',
       group   => 0,
       mode    => '0644',
-      content => template('resolv_conf/resolv.conf.erb'),
+      content => template("resolv_conf/${config_template}"),
     }
     file { '/etc/resolv.conf':
       ensure  => link,
@@ -57,7 +58,7 @@ class resolv_conf (
       owner   => 'root',
       group   => 0,
       mode    => '0644',
-      content => template('resolv_conf/resolv.conf.erb'),
+      content => template("resolv_conf/${config_template}"),
     }
   }
 
@@ -65,7 +66,7 @@ class resolv_conf (
     exec { 'load resolv.conf in smf':
       command     => $update_cmd,
       refreshonly => true,
-      subscribe   => File[$resolv_conf::params::config_file],
+      subscribe   => File[$config_file],
     }
   }
 }
