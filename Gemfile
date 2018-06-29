@@ -2,7 +2,7 @@ source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
 group :test do
   gem 'puppetlabs_spec_helper',                                     require: false
-  gem 'rspec-puppet', '~> 2.5',                                     require: false
+  gem 'rspec-puppet',                                               require: false
   gem 'rspec-puppet-facts',                                         require: false
   gem 'rspec-puppet-utils',                                         require: false
   gem 'puppet-lint-absolute_classname-check',                       require: false
