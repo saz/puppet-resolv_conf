@@ -303,5 +303,36 @@ on_supported_os.each_value do |f|
         end
       end
     end
+    [
+      {
+        nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
+        mode: '0444'
+      }
+    ].each do |param_set|
+      describe 'when setting neither searchpath nor domainname' do
+        let :param_hash do
+          default_params.merge(param_set)
+        end
+
+        let :params do
+          param_set
+        end
+
+        let(:facts) do
+          f.merge(super())
+        end
+
+        describe "on #{f[:os]}" do
+          it do
+            is_expected.to contain_file('/etc/resolv.conf').with(
+              'ensure'  => 'file',
+              'owner'   => 'root',
+              'group'   => 0,
+              'mode'    => '0444'
+            )
+          end
+        end
+      end
+    end
   end
 end
