@@ -1,4 +1,5 @@
 ---
+resolv_conf::config_template: 'resolv.conf.erb'
 resolv_conf::use_resolvconf: false
 resolv_conf::package: ~
 resolv_conf::package_ensure: 'absent'
