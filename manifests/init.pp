@@ -23,6 +23,7 @@ class resolv_conf (
   Optional[String]              $domainname = undef,
   Variant[Array[String],String] $searchpath = [],
   Optional[Array]               $options    = undef,
+  String                        $mode       = '0644',
 ) {
 
   if $domainname == undef and $searchpath == [] {
@@ -44,7 +45,7 @@ class resolv_conf (
       ensure  => file,
       owner   => 'root',
       group   => 0,
-      mode    => '0644',
+      mode    => $mode,
       content => template("resolv_conf/${config_template}"),
     }
     file { '/etc/resolv.conf':
@@ -57,7 +58,7 @@ class resolv_conf (
       ensure  => file,
       owner   => 'root',
       group   => 0,
-      mode    => '0644',
+      mode    => $mode,
       content => template("resolv_conf/${config_template}"),
     }
   }
