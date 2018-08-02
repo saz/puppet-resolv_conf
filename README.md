@@ -6,7 +6,7 @@ Manage resolv.conf via Puppet
 If you find this module useful, send some bitcoins to 1Na3YFUmdxKxJLiuRXQYJU2kiNqA3KY2j9
 
 ### Supported Puppet versions
-* Puppet >= 4
+* Puppet >= 4.9.3
 * Last version supporting Puppet 3: v3.3.0
 
 ## Usage
