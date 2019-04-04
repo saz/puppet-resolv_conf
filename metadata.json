@@ -44,6 +44,9 @@
     },
     {
       "operatingsystem": "AIX"
+    },
+    {
+      "operatingsystem": "Solaris"
     }
   ],
   "requirements": [
