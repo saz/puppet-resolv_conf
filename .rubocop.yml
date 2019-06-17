@@ -13,7 +13,7 @@ AllCops:
     - spec/fixtures/**/*
     - Gemfile
     - Rakefile
-Lint/ConditionPosition:
+Layout/ConditionPosition:
   Enabled: true
 
 Lint/ElseLayout:
@@ -75,13 +75,13 @@ Lint/AmbiguousRegexpLiteral:
 Security/Eval:
   Enabled: true
 
-Lint/BlockAlignment:
+Layout/BlockAlignment:
   Enabled: true
 
-Lint/DefEndAlignment:
+Layout/DefEndAlignment:
   Enabled: true
 
-Lint/EndAlignment:
+Layout/EndAlignment:
   Enabled: true
 
 Lint/DeprecatedClassMethods:
@@ -117,7 +117,7 @@ Lint/Void:
 Layout/AccessModifierIndentation:
   Enabled: true
 
-Style/AccessorMethodName:
+Naming/AccessorMethodName:
   Enabled: true
 
 Style/Alias:
@@ -153,7 +153,7 @@ Layout/CaseIndentation:
 Style/CharacterLiteral:
   Enabled: true
 
-Style/ClassAndModuleCamelCase:
+Naming/ClassAndModuleCamelCase:
   Enabled: true
 
 Style/ClassAndModuleChildren:
@@ -248,7 +248,7 @@ Style/CommentAnnotation:
 Metrics/CyclomaticComplexity:
   Enabled: false
 
-Style/ConstantName:
+Naming/ConstantName:
   Enabled: true
 
 Style/Documentation:
@@ -272,10 +272,10 @@ Style/EachWithObject:
 Layout/EmptyLineBetweenDefs:
   Enabled: true
 
-Layout/IndentArray:
+Layout/IndentFirstArrayElement:
   Enabled: true
 
-Layout/IndentHash:
+Layout/IndentFirstHashElement:
   Enabled: true
 
 Layout/IndentationConsistency:
@@ -354,7 +354,7 @@ Style/UnlessElse:
 Style/VariableInterpolation:
   Enabled: true
 
-Style/VariableName:
+Naming/VariableName:
   Enabled: true
 
 Style/WhileUntilDo:
@@ -363,7 +363,7 @@ Style/WhileUntilDo:
 Style/EvenOdd:
   Enabled: true
 
-Style/FileName:
+Naming/FileName:
   Enabled: true
 
 Style/For:
@@ -372,7 +372,7 @@ Style/For:
 Style/Lambda:
   Enabled: true
 
-Style/MethodName:
+Naming/MethodName:
   Enabled: true
 
 Style/MultilineTernaryOperator:
@@ -417,7 +417,7 @@ Style/PercentLiteralDelimiters:
 Style/PerlBackrefs:
   Enabled: true
 
-Style/PredicateName:
+Naming/PredicateName:
   Enabled: true
 
 Style/RedundantException:
@@ -452,9 +452,6 @@ Metrics/ParameterLists:
 Lint/RequireParentheses:
   Enabled: true
 
-Layout/SpaceBeforeFirstArg:
-  Enabled: true
-
 Style/ModuleFunction:
   Enabled: true
 
@@ -486,9 +483,6 @@ Metrics/BlockLength:
 # 'Complexity' is very relative
 Metrics/PerceivedComplexity:
   Enabled: False
-
-Lint/UselessAssignment:
-  Enabled: true
 
 Layout/ClosingParenthesisIndentation:
   Enabled: false
