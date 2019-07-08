@@ -60,6 +60,10 @@ on_supported_os.each_value do |f|
         nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1']
       },
       {
+        searchpath: ['example.com', 'example.de', 'example.de'],
+        nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1']
+      },
+      {
         searchpath: 'example.com',
         nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
         options: ['timeout:2', 'attempts:3']
@@ -100,7 +104,7 @@ on_supported_os.each_value do |f|
             if param_hash[:searchpath].empty?
               expected_lines.push("domain #{param_hash[:domainname]}")
             elsif param_hash[:searchpath].is_a?(Array)
-              expected_lines.push('search ' + param_hash[:searchpath].join(' '))
+              expected_lines.push('search ' + param_hash[:searchpath].uniq().join(' '))
             else
               expected_lines.push("search #{param_hash[:searchpath]}")
             end
@@ -303,6 +307,7 @@ on_supported_os.each_value do |f|
         end
       end
     end
+
     [
       {
         nameservers: ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
