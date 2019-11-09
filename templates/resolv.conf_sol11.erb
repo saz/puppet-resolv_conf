@@ -16,11 +16,9 @@ search	<%= @searchpath.uniq().join(" ") %>
 search	<%= @searchpath %>
 <% end -%>
 <% end -%>
+<% if @options && !@options.empty? -%>
+options	<%= @options.join(" ") %>
+<% end -%>
 <% @nameservers.each do |ns| -%>
 nameserver	<%= ns %>
-<% end -%>
-<% if @options && !@options.empty? -%>
-<% @options.each do |option| -%>
-options	<%= option %>
-<% end -%>
 <% end -%>
