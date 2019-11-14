@@ -178,7 +178,7 @@ Style/WhenThen:
 Style/WordArray:
   Enabled: true
 
-Style/UnneededPercentQ:
+Style/RedundantPercentQ:
   Enabled: true
 
 Layout/Tab:
