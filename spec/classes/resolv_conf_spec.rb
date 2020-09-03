@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 on_supported_os.each_value do |f|
@@ -104,7 +106,7 @@ on_supported_os.each_value do |f|
             if param_hash[:searchpath].empty?
               expected_lines.push("domain #{param_hash[:domainname]}")
             elsif param_hash[:searchpath].is_a?(Array)
-              expected_lines.push('search ' + param_hash[:searchpath].uniq().join(' '))
+              expected_lines.push('search ' + param_hash[:searchpath].uniq.join(' '))
             else
               expected_lines.push("search #{param_hash[:searchpath]}")
             end
