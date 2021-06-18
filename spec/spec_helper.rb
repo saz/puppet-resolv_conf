@@ -1,18 +1,18 @@
-# frozen_string_literal: true
+# This file is managed via modulesync
+# https://github.com/voxpupuli/modulesync
+# https://github.com/voxpupuli/modulesync_config
 
-require 'puppetlabs_spec_helper/module_spec_helper'
+# puppetlabs_spec_helper will set up coverage if the env variable is set.
+# We want to do this if lib exists and it hasn't been explicitly set.
+ENV['COVERAGE'] ||= 'yes' if Dir.exist?(File.expand_path('../../lib', __FILE__))
 
-if Puppet::Util::Package.versioncmp(Puppet.version, '4.5.0') >= 0
-  RSpec.configure do |c|
-    c.before do
-      Puppet.settings[:strict] = :error
+require 'voxpupuli/test/spec_helper'
+
+if File.exist?(File.join(__dir__, 'default_module_facts.yml'))
+  facts = YAML.safe_load(File.read(File.join(__dir__, 'default_module_facts.yml')))
+  if facts
+    facts.each do |name, value|
+      add_custom_fact name.to_sym, value
     end
   end
-end
-
-# put local configuration and setup into spec_helper_local
-begin
-  require 'spec_helper_local'
-rescue LoadError => loaderror
-  puts "Could not require spec_helper_local: #{loaderror.message}"
 end
