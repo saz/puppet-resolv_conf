@@ -37,7 +37,7 @@ class resolv_conf (
 
   if $manage_package {
     ensure_packages([
-        $package
+        $package,
       ], {
         'ensure' => $package_ensure,
     })
