@@ -25,7 +25,6 @@ class resolv_conf (
   Optional[Array]               $options    = undef,
   String                        $mode       = '0644',
 ) {
-
   if $domainname == undef and $searchpath == [] {
     $domainname_real = $facts['networking']['domain']
   } elsif $domainname != undef and $searchpath == [] {
@@ -37,7 +36,11 @@ class resolv_conf (
   }
 
   if $manage_package {
-    ensure_packages([$package], {'ensure' => $package_ensure})
+    ensure_packages([
+        $package
+      ], {
+        'ensure' => $package_ensure,
+    })
   }
 
   if $use_resolvconf {
