@@ -27,11 +27,11 @@ class resolv_conf (
 ) {
 
   if $domainname == undef and $searchpath == [] {
-    $domainname_real = $::domain
+    $domainname_real = $facts['networking']['domain']
   } elsif $domainname != undef and $searchpath == [] {
     $domainname_real = $domainname
   } elsif $domainname != undef and $searchpath != [] {
-    if $::osfamily != 'Solaris' {
+    if $facts['os']['family'] != 'Solaris' {
       fail('domainname and searchpath are mutually exclusive parameters')
     }
   }
