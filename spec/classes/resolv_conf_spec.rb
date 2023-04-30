@@ -87,10 +87,10 @@ on_supported_os.each_value do |f|
         describe "on #{f[:os]}" do
           it do
             is_expected.to contain_file('/etc/resolv.conf').with(
-              'ensure'  => 'file',
-              'owner'   => 'root',
-              'group'   => 0,
-              'mode'    => '0644'
+              'ensure' => 'file',
+              'owner' => 'root',
+              'group' => 0,
+              'mode' => '0644'
             )
           end
 
@@ -106,7 +106,7 @@ on_supported_os.each_value do |f|
             if param_hash[:searchpath].empty?
               expected_lines.push("domain #{param_hash[:domainname]}")
             elsif param_hash[:searchpath].is_a?(Array)
-              expected_lines.push('search ' + param_hash[:searchpath].uniq.join(' '))
+              expected_lines.push("search #{param_hash[:searchpath].uniq.join(' ')}")
             else
               expected_lines.push("search #{param_hash[:searchpath]}")
             end
@@ -153,10 +153,10 @@ on_supported_os.each_value do |f|
         describe "on #{f[:os]}" do
           it do
             is_expected.to contain_file('/etc/resolv.conf').with(
-              'ensure'  => 'file',
-              'owner'   => 'root',
-              'group'   => 0,
-              'mode'    => '0644'
+              'ensure' => 'file',
+              'owner' => 'root',
+              'group' => 0,
+              'mode' => '0644'
             )
           end
 
@@ -215,10 +215,10 @@ on_supported_os.each_value do |f|
         describe "on #{f[:os]}" do
           it do
             is_expected.to contain_file('/etc/resolv.conf').with(
-              'ensure'  => 'file',
-              'owner'   => 'root',
-              'group'   => 0,
-              'mode'    => '0644'
+              'ensure' => 'file',
+              'owner' => 'root',
+              'group' => 0,
+              'mode' => '0644'
             )
           end
 
@@ -277,10 +277,10 @@ on_supported_os.each_value do |f|
 
           it do
             is_expected.to contain_file('/run/resolvconf/resolv.conf').with(
-              'ensure'  => 'file',
-              'owner'   => 'root',
-              'group'   => 0,
-              'mode'    => '0644'
+              'ensure' => 'file',
+              'owner' => 'root',
+              'group' => 0,
+              'mode' => '0644'
             )
           end
 
@@ -332,10 +332,10 @@ on_supported_os.each_value do |f|
         describe "on #{f[:os]}" do
           it do
             is_expected.to contain_file('/etc/resolv.conf').with(
-              'ensure'  => 'file',
-              'owner'   => 'root',
-              'group'   => 0,
-              'mode'    => '0444'
+              'ensure' => 'file',
+              'owner' => 'root',
+              'group' => 0,
+              'mode' => '0444'
             )
           end
         end
