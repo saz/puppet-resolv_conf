@@ -1,6 +1,6 @@
 {
   "name": "saz-resolv_conf",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "author": "saz",
   "summary": "Manage resolv.conf via Puppet",
   "description": "Manage resolv.conf via Puppet",
@@ -50,9 +50,9 @@
     }
   ],
   "requirements": [
-    { "name": "puppet", "version_requirement": ">=6.1.0 <8.0.0" }
+    { "name": "puppet", "version_requirement": ">=6.1.0 <9.0.0" }
   ],
   "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">=2.6.0 < 9.0.0" }
+    { "name": "puppetlabs/stdlib", "version_requirement": ">=2.6.0 < 10.0.0" }
   ]
 }
