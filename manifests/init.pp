@@ -36,7 +36,7 @@ class resolv_conf (
   }
 
   if $manage_package {
-    ensure_packages([
+    stdlib::ensure_packages([
         $package,
       ], {
         'ensure' => $package_ensure,
