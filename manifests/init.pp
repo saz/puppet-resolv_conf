@@ -1,15 +1,31 @@
 # == Class: resolv_conf
+# @summary Manage resolv.conf settings
 #
-# This class initializes the resolv_conf class
-#
-# === Variables
-#  [*nameservers*]
-#  [*domainname*]
-#  [*searchpath*]
-#  [*options*]
-#
-# === Requires
-#  [*puppetlabs-stdlib*](https://github.com/puppetlabs/puppetlabs-stdlib)
+# @param nameservers
+#   List of nameservers
+# @param config_file
+#   Config file
+# @param config_template
+#   Config template to use
+# @param use_resolvconf
+#   Wether or not to use resolvconf
+# @param update_cmd
+#   Update command to load resolv.conf.
+#   Only needed on some OS
+# @param package
+#   Name of the package to install
+# @param manage_package
+#   Wether or not a package should be managed
+# @param package_ensure
+#   Ensure the state of the managed package
+# @param domainname
+#   Local domain name
+# @param searchpath
+#   Search list for host-name lookup
+# @param options
+#   Modify certain internal resolver variables
+# @param mode
+#   Config file mode
 #
 class resolv_conf (
   Array                         $nameservers,
