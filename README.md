@@ -2,13 +2,6 @@
 
 Manage resolv.conf via Puppet
 
-## Show some love
-If you find this module useful, send some bitcoins to 1Na3YFUmdxKxJLiuRXQYJU2kiNqA3KY2j9
-
-### Supported Puppet versions
-* Puppet >= 4.9.3
-* Last version supporting Puppet 3: v3.3.0
-
 ## Usage
 
 ```
@@ -34,9 +27,3 @@ If you find this module useful, send some bitcoins to 1Na3YFUmdxKxJLiuRXQYJU2kiN
         searchpath  => ['sub1.example.com', 'sub2.example.com'],
     }
 ```
-
-## Class parameters
-* nameservers: Array. Required. List of nameservers
-* domainname: String. Default: $::domain
-* searchpath: String or Array. List of search domains. Default: []
-* options: Array. Default: empty
